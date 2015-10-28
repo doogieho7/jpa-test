@@ -11,18 +11,15 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import demo.entity.Album;
 import demo.entity.Category;
-import demo.entity.Member;
 import demo.entity.Video;
 import demo.repository.AlbumRepository;
 import demo.repository.CategoryRepository;
-import demo.repository.MemberRepository;
+
 
 @EntityScan(basePackages="demo.entity")
 @EnableJpaRepositories(basePackages="demo.repository")
 @SpringBootApplication
 public class Jpa1Application implements CommandLineRunner {
-	@Autowired
-	MemberRepository memberRepository;
 	
 	@Autowired
 	CategoryRepository categoryRepository;
@@ -34,6 +31,7 @@ public class Jpa1Application implements CommandLineRunner {
         SpringApplication.run(Jpa1Application.class, args);
     }
     
+    /*
     public void testMember() {
 		memberRepository.save(new Member("a", 10));
 		memberRepository.save(new Member("b", 15));
@@ -53,7 +51,9 @@ public class Jpa1Application implements CommandLineRunner {
 			System.out.println(m.toString());
 		}    	
     }
+    */
     
+    /*
     public void testAlbumAndVide() {
 		Category ca1 = categoryRepository.findOne(1);
 		
@@ -67,19 +67,20 @@ public class Jpa1Application implements CommandLineRunner {
 		
 		albumRepository.save(a1);
     }
+    */
 
 	@Override
 	public void run(String... args) throws Exception {
-
+		/*
 		Category ca2 = categoryRepository.findOne(2);
 		System.out.println("Category: " + ca2.toString());
 		
 		Album ab1 = albumRepository.findOne((long)1);
-		System.out.println("Album: " + ab1.toString());
-/*		
+		System.out.println("Album: " + ab1.toString());		
+		
 		for (Video v : ab1.getVideoList()) {
 			System.out.println("Video: " + v.toString());
 		}
-*/
+		 */
 	}
 }
